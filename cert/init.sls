@@ -43,7 +43,7 @@ cert_packages:
     - mode: {{ key_mode }}  
   {% endif %}
 
-{% if grains['os_family']=="Debian" %}
+{% if grains['os_family']=="Debian" or grains['os_family']=="Suse" %}
   cmd.run:
     - name: update-ca-certificates
     - runas: root
